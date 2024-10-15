@@ -28089,6 +28089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1875161217831392945}
   - component: {fileID: 6272603239459877359}
+  - component: {fileID: 5735259794572938541}
   m_Layer: 0
   m_Name: FOB_LOD
   m_TagString: Untagged
@@ -28566,6 +28567,27 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1676404933098057151}
   m_Enabled: 1
+--- !u!65 &5735259794572938541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875161217831160465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.460815, y: 19.433916, z: 16.614838}
+  m_Center: {x: 1.8240967, y: 4.370248, z: 0.4618492}
 --- !u!1 &1875161217831160471
 GameObject:
   m_ObjectHideFlags: 0
