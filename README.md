@@ -46,3 +46,14 @@ Ik ben nog aan het leren en onderzoek Unity steeds verder om het programma beter
 ---
 
 Met deze beschrijving en reflectie heb je nu een duidelijke, gestructureerde README waarin je de mechaniek uitlegt, je keuzes motiveert en reflecteert op wat er beter kan.
+
+
+
+
+laatste opdracht aanpassingen:
+
+Skybox toegevoegd, met een dag & nacht script.
+
+gezorgd voor nog een npc in de map die ook beweegt.
+
+eigen idee: niet echt kunnen toevoegen.
