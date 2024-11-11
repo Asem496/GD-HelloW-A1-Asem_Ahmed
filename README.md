@@ -57,3 +57,11 @@ Skybox toegevoegd, met een dag & nacht script.
 gezorgd voor nog een npc in de map die ook beweegt.
 
 eigen idee: niet echt kunnen toevoegen.
+
+
+
+laatste aanpassingen: 
+
+springfunctie
+beweegbare pop.
+meer experimenteren met animaties.
