@@ -16,6 +16,11 @@ public class Bewegen : MonoBehaviour
     public float groundCheckDistance = 0.1f;  // Adjust as needed for your model
     public LayerMask groundLayer;  // Assign a ground layer in Unity to check only against the ground
 
+    // Camera variables
+    public Transform playerCamera;  // Assign the Camera object in the Inspector
+    public float mouseSensitivity = 2f;  // Adjust for desired sensitivity
+    private float cameraPitch = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +29,9 @@ public class Bewegen : MonoBehaviour
 
         // Enable gravity for realistic movement
         rb.useGravity = true;
+
+        // Lock the cursor to the center of the screen
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -61,10 +69,24 @@ public class Bewegen : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpspeed, rb.velocity.z);
         }
 
-        // Calculate movement vector (X for left/right, Z for forward/back)
-        Vector3 movement = new Vector3(moveHorizontal, rb.velocity.y / speed, moveVertical) * speed;
+        // Calculate movement vector relative to the player's orientation
+        Vector3 movement = (transform.forward * moveVertical + transform.right * moveHorizontal).normalized * speed;
 
         // Apply velocity directly to Rigidbody without affecting rotation
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+
+        // Handle camera rotation
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+
+        // Rotate the player horizontally
+        transform.Rotate(Vector3.up * mouseX);
+
+        // Adjust camera pitch (vertical rotation)
+        cameraPitch -= mouseY;
+        cameraPitch = Mathf.Clamp(cameraPitch, -90f, 90f);
+
+        // Apply rotation to the camera
+        playerCamera.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
     }
 }

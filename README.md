@@ -66,3 +66,5 @@ springfunctie
 beweegbare pop.
 meer experimenteren met animaties.
 pick up the rats
+
+rotatatie camera
